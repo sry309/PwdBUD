@@ -34,8 +34,8 @@ def stdSave():
         seq4 = fa2.Factor2(pa.parse_args().company).sequence4()
         seq5 = fa2.Factor2(pa.parse_args().company).sequence5()
         seq6 = fa2.Factor2(pa.parse_args().company).sequence6()
-        seq = seq + seq4 + seq5 + seq6
-    # seq = seq1+seq2+seq3+seq4+seq5+seq6
+        seq7 = fa2.Factor2(pa.parse_args().company).sequence7()
+        seq = seq + seq4 + seq5 + seq6 +seq7
     for i in seq:
         print(i)
 
@@ -45,6 +45,3 @@ if __name__ == '__main__':
     print('[-] Saving...')
 
     stdSave()
-    # seq6 = fa2.Factor2(pa.parse_args().company).sequence6()
-    # for i in seq6:
-    #     print(i)

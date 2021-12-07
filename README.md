@@ -1,17 +1,15 @@
 # pwdbud
 
 ## 0x00
->在挖SRC时，对登录界面尝试过top字典无果后，可以根据域名、公司名或其他元素来生成特定的字典
+>在挖SRC时，尝试top字典无果后，可以根据域名、公司名等因素来生成特定的字典
 
 ## 0x01
-PwdBUD要做的是大而全，不必指定生成规则，全部生成就完事儿了。毕竟弱口令爆破这事儿是玄学，用户指不定用的是哪个奇奇怪怪的密码。
+PwdBUD仅需三个参数，以域名或公司名为索引生成字典。
 ## 0x02
 ~~~shell
 -d --domain    #域名
 
 -c --company   #公司名
-
--e --element   #其他元素
 
 -o --outfile   #必须，输出文件
 ~~~
@@ -20,8 +18,21 @@ python pwdbud.py -d jd -c jingdong -o res.txt
 ~~~
 
 ## 0x03
--e 暂时没写完，现在完成的规则如下。这个版本暂时能用吧
-
+~~~shell
+摘录部分生成的密码
+Jd20170105
+Jd20170106
+Jd19990521
+Jd19990522
+jD041008
+jD041009
+Jingdong@zxczxc
+Jingdong@l123456
+jingdong_zhoujie
+jingdong_chenjianhua
+Jingdong2013.
+Jingdong2014.
+~~~
 ## ToDo
 ~~~shell
 已完成的规则:
@@ -31,13 +42,6 @@ python pwdbud.py -d jd -c jingdong -o res.txt
 公司名称+年份    Jingdong2022
 公司名+特殊字符+年份    Jingdong@2019
 公司名+特殊字符+top1000弱口令    Jingdong@2019
+公司名称+年份+特殊字字符    Jingdong2021@
 ~~~
-~~~shell
-待完成规则:
-季节/季度/月份+年份+特殊字字符
-员工姓名简拼+123/1234/12345/生日日期
-符合密码强度策略的（这个直接套字典）
-奇葩情况 如：1/123/111等（应占少部分）
-~~~
-
 参考火线听火沙龙十七期
