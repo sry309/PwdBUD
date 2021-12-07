@@ -76,7 +76,49 @@ class Factor2:
             result.append(domian.lower() + x)
         return result
 
+########################公司名######################################################
     #公司名+年份
-    def sequence3(self):
+    # Example: Jingdong2019
+    def sequence4(self):
         result = []
+        year = ['2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022']
         domian = str(self.domaim)
+        #domianList1 = list(str(self.domaim))
+        for x in year:
+            result.append(str(domian+x))
+        for x in year:
+            result.append(domian.capitalize()+x)
+        return result
+
+    #公司名+特殊字符+年份
+    #Example: Jingdong@2019
+    def sequence5(self):
+        result = []
+        year = ['2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022']
+        str1 = ['!',"@","#","$","%","^","&","*","(",")","_","+","=","?","<",">","."]
+        domian = str(self.domaim)
+        #domianList1 = list(str(self.domaim))
+        for i in str1:
+            for x in year:
+                result.append(str(domian+i+x))
+            for x in year:
+                result.append(domian.capitalize()+i+x)
+        return result
+
+    #公司名+特殊字符+top1000弱口令
+    #Example: Jingdong@2019
+    def sequence6(self):
+        result = []
+        with open('.\\dict\\top1000.txt') as f:
+            pwd = f.readlines()
+        str1 = ['!',"@","#","$","%","^","&","*","(",")","_","+","=","?","<",">","."]
+        domian = str(self.domaim)
+        #domianList1 = list(str(self.domaim))
+        for i in str1:
+            for x in pwd:
+                x = x.replace("\n", "")
+                result.append(str(domian+i+x))
+            for x in pwd:
+                x = x.replace("\n", "")
+                result.append(domian.capitalize()+i+x)
+        return result
