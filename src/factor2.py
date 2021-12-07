@@ -75,3 +75,8 @@ class Factor2:
             x = x.replace("\n", "")
             result.append(domian.lower() + x)
         return result
+
+    #公司名+年份
+    def sequence3(self):
+        result = []
+        domian = str(self.domaim)
