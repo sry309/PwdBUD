@@ -1,9 +1,8 @@
-# 2因素密码生成
-# 密码仅由两个因素构成，如：字母+数字组合。
-# 这里的因素特指几段不同的序列，如字母为一因素，数字为一因素，特殊符号为一因素。
+# 多因素密码生成
+# 这里的因素特指不同的序列，如字母为一因素，数字为一因素，特殊符号为一因素。
 # 大写不作为单独的因素添加。
 import src.jobnumber as jn
-
+from pathlib import Path
 
 class Factor2:
     def __init__(self, domain):
@@ -33,7 +32,7 @@ class Factor2:
     def sequence2(self):
         result = []
         domian = str(self.domaim)
-        with open('.\\dict\\top1000.txt') as f:
+        with open(Path("./dict/top1000.txt")) as f:
             birth = f.readlines()
 
         for i in range(len(domian)):
@@ -57,7 +56,7 @@ class Factor2:
     def sequence3(self):
         result = []
         domian = str(self.domaim)
-        with open('.\\dict\\birth.txt') as f:
+        with open(Path("./dict/birth.txt")) as f:
             birth = f.readlines()
 
         for i in range(len(domian)):
@@ -109,7 +108,7 @@ class Factor2:
     #Example: Jingdong@2019
     def sequence6(self):
         result = []
-        with open('.\\dict\\top1000.txt') as f:
+        with open(Path("./dict/top1000.txt")) as f:
             pwd = f.readlines()
         str1 = ['!',"@","#","$","%","^","&","*","(",")","_","+","=","?","<",">","."]
         domian = str(self.domaim)
